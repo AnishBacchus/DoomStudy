@@ -19,7 +19,7 @@ public class StudyController {
     //Method to get all the prompts created.
 
     @GetMapping("/get")
-    public void getDrivers() { //Status 200
+    public void getPrompt() { //Status 200
 
     }
 
