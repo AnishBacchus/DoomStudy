@@ -9,5 +9,5 @@ public class DoomStudyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DoomStudyApplication.class, args);
 	}
-		//Testing
+
 }
