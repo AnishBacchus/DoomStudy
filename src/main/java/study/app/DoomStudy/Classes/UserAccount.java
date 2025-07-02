@@ -1,6 +1,7 @@
 package study.app.DoomStudy.Classes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,5 +26,6 @@ public class UserAccount {
     private String password;
 
     @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Prompt> prompts = new ArrayList<>();
 }

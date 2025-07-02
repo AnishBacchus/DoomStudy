@@ -1,5 +1,6 @@
 package study.app.DoomStudy.Classes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,5 +21,6 @@ public class Prompt {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_account_id")
+    @JsonBackReference
     private UserAccount userAccount;
 }
