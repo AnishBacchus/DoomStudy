@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = () => {
-  const features = ["Study Timer", "To-Do List", "Calendar", "Flashcards"];
+  const features = ["Study", "To-Do List", "Calendar", "Flashcards"];
 
   return (
     <div style={{ padding: 40, background: "#8E9AAF", minHeight: "100vh" }}>
