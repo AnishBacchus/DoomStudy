@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./pages/Home";
 
 function App() {
   const palette = {
@@ -14,8 +15,8 @@ function App() {
         margin: 0,
       }}
     >
-      <h1> DoomStudy</h1>
-      <p>For all the academic weapons who suffer from brainrot</p>
+      {/* Create the Home component under the header*/}
+      <Home />
     </div>
   );
 }
