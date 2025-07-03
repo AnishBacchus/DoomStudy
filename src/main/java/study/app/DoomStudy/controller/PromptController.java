@@ -5,7 +5,6 @@ import study.app.DoomStudy.Service.PromptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import study.app.DoomStudy.Classes.Prompt;
-
 import java.util.List;
 
 @RestController
@@ -49,17 +48,17 @@ public class PromptController {
     }
 
     //-----------------------------------------------------------------------------------------------------------
-    //Method to replace an old question with new question. FIX METHOD
+    //Method to replace an old question with new question.
 
-    @PutMapping("/{userId}/replaceQuestion/{current}/{new}")
+    @PutMapping("/{userId}/replaceQuestion/{current}/{newQuestion}")
     public ResponseEntity<String> updateQuestion(@PathVariable Long userId, @PathVariable String current, @PathVariable String newQuestion) { //Status 200
         return promptService.updateQues(userId,current, newQuestion);
     }
 
     //-----------------------------------------------------------------------------------------------------------
-    //Method to replace an old answer with new answer. FIX METHOD
+    //Method to replace an old answer with new answer.
 
-    @PutMapping("/{userId}/replaceAnswer/{current}/{new}")
+    @PutMapping("/{userId}/replaceAnswer/{current}/{newAnswer}")
     public ResponseEntity<String> updateAnswer(@PathVariable Long userId, @PathVariable String current, @PathVariable String newAnswer) { //Status 200
         return promptService.updateAns(userId, current, newAnswer);
     }

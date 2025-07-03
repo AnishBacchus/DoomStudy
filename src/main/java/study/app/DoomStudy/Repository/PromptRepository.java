@@ -3,8 +3,6 @@ package study.app.DoomStudy.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import study.app.DoomStudy.Classes.Prompt;
-
-import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
 @Repository
