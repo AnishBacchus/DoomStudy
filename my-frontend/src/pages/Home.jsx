@@ -16,7 +16,14 @@ const Home = () => {
   return (
     <div style={{ padding: 40, background: "#8E9AAF", minHeight: "100vh" }}>
       {/* Main Title */}
-      <h1 style={{ textAlign: "center", marginBottom: 40, color: "#0077b6" }}>
+      <h1
+        style={{
+          fontSize: 40,
+          textAlign: "center",
+          marginBottom: 40,
+          color: "#0077b6",
+        }}
+      >
         DoomStudy
       </h1>
 

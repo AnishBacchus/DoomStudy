@@ -55,13 +55,13 @@ const Study = () => {
   };
 
   return (
-    <div className="flex flex=col items-center justify-center min-h-screen bg-blue-900 text-white p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen text-white p-4">
       {/* Page Title */}
-      <h1 className="text-4xl font-bold mb-6">Study</h1>
+      <h1 className="text-5xl font-bold mb-6">Study</h1>
 
       {/* Input for minutes shown before timer starts */}
       {!hasStarted && (
-        <div className="mb-6">
+        <div className="mb-8">
           <label className="block text-lg mb-2">
             Set study time (minutes):
           </label>
@@ -76,27 +76,29 @@ const Study = () => {
       )}
 
       {/* Display the countdown*/}
-      <div className="text-6xl font-mono mb-6">{formatTime(time)}</div>
+      <div className="text-pink-500 text-[8rem] font-extrabold font-mono tracking-widest mb-12 border-4 border-pink-500">
+        {formatTime(time)}
+      </div>
 
       {/* Timer Controls */}
-      <div className="space-x-4">
+      <div className="flex gap-4">
         <button
           onClick={handleStart}
-          className="px-6 py-2 bg-green-600 hover:bg-green-500 rounded-xl"
+          className="px-8 py-3 bg-green-600 hover:bg-green-500 rounded-xl text-xl font-semibold"
         >
           Start
         </button>
 
         <button
           onClick={() => setIsRunning(false)}
-          className="px-6 py-2 bg-yellow-500 hover:bg-yellow-400 rounded-xl"
+          className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 rounded-xl text-xl font-semibold"
         >
           Pause
         </button>
 
         <button
           onClick={handleReset}
-          className="px-6 py-2 bg-red-600 hover:bg-red-500 rounded-xl"
+          className="px-8 py-3 bg-red-600 hover:bg-red-500 rounded-xl text-xl font-semibold"
         >
           Reset
         </button>
