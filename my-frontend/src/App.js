@@ -5,19 +5,17 @@ import Home from "./pages/Home";
 import Study from "./pages/Study";
 
 function App() {
-  // Custom color pallete
-  const palette = {
-    light_grey: "#8E9AAF",
-  };
   return (
-    // Set background color, heigh, and layout style
+    // Set background color, height, and layout style
     <div
       style={{
-        backgroundColor: palette.light_grey,
+        background:
+          "radial-gradient(circle at center, #F0FFF0 60%, #FEFEFA 150%)",
         minHeight: "100vh",
         padding: "50px",
         textAlign: "center",
         margin: 0,
+        color: "white",
       }}
     >
       {/* Wrap the app in a router so we can switch pages */}

@@ -14,14 +14,21 @@ const Home = () => {
   };
 
   return (
-    <div style={{ padding: 40, background: "#8E9AAF", minHeight: "100vh" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        padding: 40,
+        color: "white",
+      }}
+    >
       {/* Main Title */}
       <h1
         style={{
           fontSize: 40,
           textAlign: "center",
-          marginBottom: 40,
-          color: "#0077b6",
+          marginBottom: 20,
+          color: "#3b82f6", // Soft Blue Color
+          textShadow: "0 0 10px #3b82f6", // Blue Glow
         }}
       >
         DoomStudy
