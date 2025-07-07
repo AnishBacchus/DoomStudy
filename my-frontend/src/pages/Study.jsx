@@ -57,12 +57,12 @@ const Study = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-white p-4">
       {/* Page Title */}
-      <h1 className="text-5xl font-bold mb-6">Study</h1>
+      <h1 className="text-5xl font-bold mb-6 text-black">Study</h1>
 
       {/* Input for minutes shown before timer starts */}
       {!hasStarted && (
         <div className="mb-8">
-          <label className="block text-lg mb-2">
+          <label className="block text-lg mb-2 text-green-800">
             Set study time (minutes):
           </label>
           <input
@@ -76,7 +76,7 @@ const Study = () => {
       )}
 
       {/* Display the countdown*/}
-      <div className="text-pink-500 text-[8rem] font-extrabold font-mono tracking-widest mb-12 border-4 border-pink-500">
+      <div className="text-blue-500 text-[8rem] font-extrabold font-mono tracking-widest mb-12 border-4 border-blue-700">
         {formatTime(time)}
       </div>
 

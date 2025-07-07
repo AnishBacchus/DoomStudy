@@ -21,6 +21,29 @@ const Home = () => {
         color: "white",
       }}
     >
+      {/* Style for animation*/}
+      <style>
+        {`
+          @keyframes pulseGlow{
+            0%{
+              box-shadow: 0 0 20px rgba(59,130,246,0.6);
+            }
+            50%{
+              box-shadow: 0 0 35px rgba(59,130,246,0.9);
+            }
+            100% {
+              box-shadow: 0 0 20px rgba(59,130,246,0.6);
+            }
+          }
+          .bubbleBox{
+            box-shadow: 0 0 20px rgba(59,130,246,0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          .bubbleBox.pulsing{
+            animation: pulseGlow 1.5s infinite ease-in-out;
+          }
+        `}
+      </style>
       {/* Main Title */}
       <h1
         style={{
@@ -28,14 +51,22 @@ const Home = () => {
           textAlign: "center",
           marginBottom: 20,
           color: "#3b82f6", // Soft Blue Color
-          textShadow: "0 0 10px #3b82f6", // Blue Glow
+          textShadow: "0 0 10px #3b82f6, 0 0 20px #3b82f6", // Blue Glow
         }}
       >
         DoomStudy
       </h1>
 
       {/* Tagline */}
-      <p style={{ fontSize: 24, fontStyle: "italic", color: "#0077b6" }}>
+      <p
+        style={{
+          fontSize: 24,
+          fontStyle: "italic",
+          color: "#0077b6",
+          textAlign: "center",
+          textShadow: "0 0 6px #0077b6",
+        }}
+      >
         Where Brainrot meets Brainpower
       </p>
 
@@ -58,25 +89,26 @@ const Home = () => {
             style={{ textDecoration: "none" }} // Remove underline on Link
           >
             <div
+              className="bubbleBox"
               style={{
                 background: "white",
                 borderRadius: 40,
                 padding: 40,
-                boxShadow: "0 8px 15px rgba(0,0,0,0.1)",
                 textAlign: "center",
                 fontWeight: "600",
                 fontSize: 24,
                 color: "#0077b6",
                 cursor: "pointer",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                //animation: "pulseGlow 2s infinite ease-in-out",
+                //transition: "transform 0.3s ease",
               }}
               onMouseEnter={(e) => {
+                e.currentTarget.classList.add("pulsing");
                 e.currentTarget.style.transform = "translateY(-10px)";
-                e.currentTarget.style.boxShadow = "0 12px 25px rgba(0,0,0,0.2)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 15px rgba(0,0,0,0.1)";
+                e.currentTarget.classList.remove("pulsing");
+                e.currentTarget.style.transform = "translateY(0px)";
               }}
             >
               {feature}
