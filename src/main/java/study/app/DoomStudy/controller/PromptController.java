@@ -1,5 +1,6 @@
 package study.app.DoomStudy.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import study.app.DoomStudy.Service.PromptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class PromptController {
     // Method to add prompt to user.
 
     @PostMapping("/{userId}/add")
-    public ResponseEntity<String> addPromptForUser(@PathVariable Long userId, @RequestBody Prompt prompt) {
+    public ResponseEntity<String> addPromptForUser(@PathVariable Long userId, @Valid @RequestBody Prompt prompt) {
         return promptService.addToUser(userId, prompt);
     }
 

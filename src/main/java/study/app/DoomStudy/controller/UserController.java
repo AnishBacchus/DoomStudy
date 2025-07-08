@@ -1,5 +1,6 @@
 package study.app.DoomStudy.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ public class UserController {
     // Method to add user.
 
     @PostMapping("/create")
-    public ResponseEntity<String> addUser(@RequestBody UserAccount userAccount) { //Status 201
+    public ResponseEntity<String> addUser(@Valid @RequestBody UserAccount userAccount) { //Status 201
         return userService.create(userAccount);
     }
 

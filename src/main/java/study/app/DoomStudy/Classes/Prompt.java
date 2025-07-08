@@ -3,6 +3,8 @@ package study.app.DoomStudy.Classes;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.MessageInterpolator;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +18,10 @@ public class Prompt {
     @JsonIgnore
     private long id;
 
+    @NotBlank(message = "Question must not be empty.")
     private String question;
+
+    @NotBlank(message = "Answer must not be empty.")
     private String answer;
 
     @ManyToOne(fetch = FetchType.LAZY)
