@@ -55,9 +55,9 @@ const Study = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-white p-4">
+    <div className="flex flex-col items-center justify-start min-h-screen text-white p-4">
       {/* Page Title */}
-      <h1 className="text-5xl font-bold mb-6 text-black">Study</h1>
+      <h1 className="text-5xl font-bold mt-4 mb-40 text-black">Study</h1>
 
       {/* Input for minutes shown before timer starts */}
       {!hasStarted && (
@@ -76,7 +76,18 @@ const Study = () => {
       )}
 
       {/* Display the countdown*/}
-      <div className="text-blue-500 text-[8rem] font-extrabold font-mono tracking-widest mb-12 border-4 border-blue-700">
+      <div
+        className={`text-[7rem] sm:text-[9rem] font-bebas tracking-widest mb-12
+       text-white bg-black/20 rounded-[2rem] px-16 py-8
+       border-8 border-green-800 transition-all duration-300
+       ${
+         isRunning
+           ? "shadow-[0_0_35px_10px_rgba(22,101,52,0.8)]"
+           : "shadow-[0_0_15px_4px_rgba(22,101,52,0.4)]"
+       }
+       [text-shadow:_1px_1px_0_rgba(22,101,52,0.6),_-1px_-1px_0_rgba(255,255,255,0.6)]
+      `}
+      >
         {formatTime(time)}
       </div>
 
@@ -84,21 +95,27 @@ const Study = () => {
       <div className="flex gap-4">
         <button
           onClick={handleStart}
-          className="px-8 py-3 bg-green-600 hover:bg-green-500 rounded-xl text-xl font-semibold"
+          className="px-8 py-3 rounded-xl text-xl font-semibold
+                     border-4 border-green-600 text-green-600
+                     bg-black/20 hover:bg-green-600 hover:text-white transition"
         >
           Start
         </button>
 
         <button
           onClick={() => setIsRunning(false)}
-          className="px-8 py-3 bg-yellow-500 hover:bg-yellow-400 rounded-xl text-xl font-semibold"
+          className="px-8 py-3 rounded-xl text-xl font-semibold
+                     border-4 border-yellow-500 text-yellow-500
+                     bg-black/20 hover:bg-yellow-500 hover:text-white transition"
         >
           Pause
         </button>
 
         <button
           onClick={handleReset}
-          className="px-8 py-3 bg-red-600 hover:bg-red-500 rounded-xl text-xl font-semibold"
+          className="px-8 py-3 rounded-xl text-xl font-semibold
+                     border-4 border-red-600 text-red-600
+                     bg-black/20 hover:bg-red-600 hover:text-white transition"
         >
           Reset
         </button>
