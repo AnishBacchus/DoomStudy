@@ -32,13 +32,28 @@ const Study = () => {
 
   // Helper function to format seconds into mm:ss format
   const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor(seconds / 3600 / 60);
     const secs = seconds % 60;
-    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+
+    //If the time left is under an hour remove hour padding
+    if (hrs > 0) {
+      return `${String(hrs).padStart(2, "0")}:${String(mins).padStart(
+        2,
+        "0"
+      )}:${String(secs).padStart(2, "0")}`;
+    } else {
+      return `${String(mins).padStart(2, "0")}:${String(secs).padStart(
+        2,
+        "0"
+      )}`;
+    }
   };
 
   // Start button handler
   const handleStart = () => {
+    console.log("Input minutes:", inputMinutes);
+
     // Only set time if this is the first time starting
     if (!hasStarted) {
       setTime(inputMinutes * 60); // Convert mins to secs
